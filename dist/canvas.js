@@ -2,7 +2,7 @@ var eventLeftMargin = 180;
 var eventRightMargin = 0;
 
 function canvasLoadEventUpdate(canvas, minTime, maxTime, events) {
-    var ctx = canvas.getContext('2d');
+    
     for (var i = 0, y_offset = 20; i < events.length; i++) {
         var event = events[i],
             start = event.time,
@@ -71,7 +71,7 @@ function canvasLoadEventUpdate(canvas, minTime, maxTime, events) {
 }
 
 function canvasVideoEventUpdate(canvas, minTime, maxTime, events) {
-    var ctx = canvas.getContext('2d');
+    
     for (var i = 0, y_offset = 20; i < events.length; i++) {
         var event = events[i],
             start = event.time,

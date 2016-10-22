@@ -35,3 +35,28 @@ video {
     cursor: pointer;
     border: none;
 }
+
+.main-video{
+  height: 60vh;
+  background-image: url('./assets/images/bg.jpg');
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#share-buttons img {
+width: 135px;
+padding: 5px;
+margin: 0px 10px;
+border: 0;
+box-shadow: 0;
+display: inline;
+}
+
+h1{
+  font-size: 4em;
+  color: white;
+  margin-bottom:100px;
+}
