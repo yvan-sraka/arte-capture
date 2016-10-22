@@ -1,18 +1,37 @@
-body {
-    background-color: black;
-    height: 100vh
+* {
+    margin: 0;
+    padding: 0;
+}
+.main-container {
+    background-image: url('./assets/images/bg.jpg');
+    background-size: cover;
 }
 
-.main-container {
+.video-container {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
-    height: 100vh;
 }
 
-p {
-    font-size: 3em;
-    color: rgb(227, 227, 227);
+video {
+    width: 100vw;
+}
+
+.button-container {
+    height: 60vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#capture-button {
+    background-image: url('./assets/images/btn-play.png');
+    background-size: cover;
+    background-color: transparent;
     margin: 50px;
+    height: 450px;
+    width: 450px;
+    cursor: pointer;
+    border: none;
 }
