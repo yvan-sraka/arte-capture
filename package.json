@@ -1,25 +1,25 @@
 {
-  "name": "arte-capture",
-  "version": "1.0.0",
-  "description": "",
-  "main": "server.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Klescouar/arte-capture.git"
-  },
-  "author": "Kevin Le Scouarnec",
-  "license": "GPL v2",
-  "bugs": {
-    "url": "https://github.com/Klescouar/arte-capture/issues"
-  },
-  "homepage": "https://github.com/Klescouar/arte-capture#readme",
-  "devDependencies": {
-    "angular": "^1.5.8",
-    "body-parser": "^1.15.2",
-    "express": "^4.14.0",
-    "path": "^0.12.7",
-  }
+    "name": "arte-capture",
+    "version": "1.0.0",
+    "description": "",
+    "main": "server.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Klescouar/arte-capture.git"
+    },
+    "author": "Kevin Le Scouarnec",
+    "license": "GPL v2",
+    "bugs": {
+        "url": "https://github.com/Klescouar/arte-capture/issues"
+    },
+    "homepage": "https://github.com/Klescouar/arte-capture#readme",
+    "devDependencies": {
+        "angular": "^1.5.8",
+        "body-parser": "^1.15.2",
+        "express": "^4.14.0",
+        "path": "^0.12.7"
+    }
 }
