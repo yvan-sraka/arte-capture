@@ -1,3 +1,5 @@
+var SEGMENT_URL; // Ugly..
+
 $(document).ready(function() {
     $('#streamSelect').change(function() {
         $('#streamURL').val($('#streamSelect').val());
@@ -265,7 +267,7 @@ function loadStream(url) {
         });
         hls.on(Hls.Events.FRAG_CHANGED, function(event, data) {
 
-            console.log(data.frag.url); // <-- THIS IS HERE !
+            SEGMENT_URL = data.frag.url; // <-- This is HERE!
 
             var event = {
                 time: performance.now() - events.t0,
@@ -917,3 +919,17 @@ function updatePermalink() {
     var description = 'permalink: ' + "<a href=\"" + hlsLink + "\">" + hlsLink + "</a>";
     $("#StreamPermalink").html(description);
 }
+
+$("#capture-button").on("click", function() {
+    console.log("SEGMENT_URL:" + SEGMENT_URL);
+    $.ajax({
+        method: "POST",
+        url: "localhost:3000",
+        data: {
+            segment: SEGMENT_URL,
+        }
+    })
+    .done(function(path) {
+        alert("PATH: " + path);
+    });
+});
