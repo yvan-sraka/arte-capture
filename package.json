@@ -1,0 +1,19 @@
+{
+  "name": "arte-capture",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Klescouar/arte-capture.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Klescouar/arte-capture/issues"
+  },
+  "homepage": "https://github.com/Klescouar/arte-capture#readme"
+}
