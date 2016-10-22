@@ -920,16 +920,16 @@ function updatePermalink() {
     $("#StreamPermalink").html(description);
 }
 
+
+// ----- BESIDE THE SALSA RECIPE OF MY GRANDMA -----
+
 $("#capture-button").on("click", function() {
-    console.log("SEGMENT_URL:" + SEGMENT_URL);
     $.ajax({
         method: "POST",
-        url: "/capture",
-        data: {
-            segment: SEGMENT_URL,
-        }
+        url: "/api/capture",
+        data: { s: SEGMENT_URL }
     })
     .done(function(path) {
-        alert("PATH: " + path);
+        console.log("PATH: " + path);
     });
 });

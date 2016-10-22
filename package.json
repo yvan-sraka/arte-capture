@@ -10,8 +10,8 @@
     "type": "git",
     "url": "git+https://github.com/Klescouar/arte-capture.git"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Kevin Le Scouarnec",
+  "license": "GPL v2",
   "bugs": {
     "url": "https://github.com/Klescouar/arte-capture/issues"
   },
@@ -20,7 +20,5 @@
     "body-parser": "^1.15.2",
     "express": "^4.14.0",
     "path": "^0.12.7",
-    "request": "^2.75.0",
-    "request-promise": "^4.1.1"
   }
 }
