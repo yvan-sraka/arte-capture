@@ -924,7 +924,7 @@ $("#capture-button").on("click", function() {
     console.log("SEGMENT_URL:" + SEGMENT_URL);
     $.ajax({
         method: "POST",
-        url: "localhost:3000",
+        url: "/capture",
         data: {
             segment: SEGMENT_URL,
         }
