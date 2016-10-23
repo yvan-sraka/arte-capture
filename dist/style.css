@@ -2,65 +2,34 @@
     margin: 0;
     padding: 0;
 }
-.main-container {
-    background-image: url('./assets/images/bg.jpg');
-    background-size: cover;
-    height: 68.4vh;
+
+body{
+  background-color: black;
 }
 
-.video-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    height: 31.6vh;
-}
 
 video {
-    width: 100vw;
+    width: 90vw;
+    margin: 0 4vw;
 }
 
-.button-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
 
 #capture-button {
     background-image: url('./assets/images/btn-play.png');
     background-size: cover;
     background-color: transparent;
-    margin: 50px;
-    height: 450px;
-    width: 450px;
+    margin: 50px auto;
+    width: 300px;
+    height: 300px;
     cursor: pointer;
     border: none;
 }
 
-#main-video{
-  height: 60vh;
-  background-image: url('./assets/images/bg.jpg');
-  background-size: cover;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-.OnePage{
-  height: 100vh;
+
+.OnePage {
 }
 
-#share-buttons img {
-width: 135px;
-padding: 5px;
-margin: 0px 10px;
-border: 0;
-box-shadow: 0;
-display: inline;
-}
-
-h1{
-  font-size: 4em;
-  color: white;
-  margin-bottom:100px;
+.PageStat {
+    background-image: url('./assets/images/bg.jpg');
+    background-size: cover;
 }

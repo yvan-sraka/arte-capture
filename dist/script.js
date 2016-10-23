@@ -941,11 +941,3 @@ $("#capture-button").on("click", function() {
             console.log("PATH: " + path);
         });
 });
-
-
-// $('#capture-button').click(function(e) {
-//     e.preventDefault();
-//     $('html, body').animate({
-//         scrollTop: $(e.target.hash).offset().top + 20
-//     }, 500);
-// });
