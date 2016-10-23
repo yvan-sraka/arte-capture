@@ -1,6 +1,19 @@
+// Initialize Firebase
+var config = {
+    apiKey: "AIzaSyByexDWX6c-4ZwBbzQpmLPs19g3Vzkv1rg",
+    authDomain: "arte-capture.firebaseapp.com",
+    databaseURL: "https://arte-capture.firebaseio.com",
+    storageBucket: "",
+    messagingSenderId: "773300319740"
+};
+
+firebase.initializeApp(config);
+
+
 var SEGMENT_URL,
     SEGMENT_TIME;
 
+// jQuery
 $(document).ready(function() {
     $('#streamSelect').change(function() {
         $('#streamURL').val($('#streamSelect').val());
@@ -272,6 +285,11 @@ function loadStream(url) {
 
             SEGMENT_URL = data.frag.url;
             SEGMENT_TIME = new Date().getTime();
+
+            var ref = firebase.database().ref('/' + SEGMENT_TIME);
+            ref.transaction(function(count) {
+                return count ? count : 0;
+            });
 
             var event = {
                 time: performance.now() - events.t0,
@@ -926,17 +944,6 @@ function updatePermalink() {
     var description = 'permalink: ' + "<a href=\"" + hlsLink + "\">" + hlsLink + "</a>";
     $("#StreamPermalink").html(description);
 }
-
-// Initialize Firebase
-var config = {
-    apiKey: "AIzaSyByexDWX6c-4ZwBbzQpmLPs19g3Vzkv1rg",
-    authDomain: "arte-capture.firebaseapp.com",
-    databaseURL: "https://arte-capture.firebaseio.com",
-    storageBucket: "",
-    messagingSenderId: "773300319740"
-};
-
-firebase.initializeApp(config);
 
 $("#capture-button").on("click", function() {
     window.open(SEGMENT_URL, '_blank');
