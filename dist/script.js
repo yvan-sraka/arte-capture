@@ -576,7 +576,7 @@ var bufferingIdx = -1;
 function checkBuffer() {
     var v = $('#video')[0];
     var canvas = $('#buffered_c')[0];
-    var ctx = canvas.getContext('2d');
+
     var r = v.buffered;
     var bufferingDuration;
     ctx.fillStyle = "black";
