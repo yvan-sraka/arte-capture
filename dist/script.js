@@ -925,21 +925,21 @@ function updatePermalink() {
     $("#StreamPermalink").html(description);
 }
 
+// Initialize Firebase
+var config = {
+    apiKey: "AIzaSyByexDWX6c-4ZwBbzQpmLPs19g3Vzkv1rg",
+    authDomain: "arte-capture.firebaseapp.com",
+    databaseURL: "https://arte-capture.firebaseio.com",
+    storageBucket: "",
+    messagingSenderId: "773300319740"
+};
 
-// ----- BESIDE THE SALSA RECIPE OF MY GRANDMA -----
+firebase.initializeApp(config);
+var ref = firebase.database().ref('/');
 
 $("#capture-button").on("click", function() {
-    window.open(SEGMENT_URL, '_blank')
-    $.ajax({
-            method: "POST",
-            url: "/api/capture",
-            data: {
-                s: SEGMENT_URL
-            }
-        })
-        .done(function(path) {
-            console.log("PATH: " + path);
-        });
+    window.open(SEGMENT_URL, '_blank');
+    ref.set({ time: new Date() });
 });
 
 $(function() {

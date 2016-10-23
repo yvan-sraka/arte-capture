@@ -4,41 +4,20 @@
 <head>
     <meta charset="utf-8">
     <title>ARTE Capture</title>
+    <link rel="stylesheet" href="./style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.5.1/firebase.js"></script>
     <script src="./hls.js/dist/hls.js"></script>
-    <script type="text/javascript" src="./angular.min.js"></script>
-    <script type="text/javascript" src="./angular-route.js"></script>
-    <link rel="stylesheet" href="./animate.css">
 </head>
 
 <body ng-app="arte-capture">
     <div class="OnePage">
-            <video id="video" controls autoplay class="videoCentered"></video>
-            <a><div  id="capture-button"></div></a>
+        <video id="video" controls autoplay class="videoCentered"></video>
+        <div id="capture-button"></div>
     </div>
-
-
-    <link rel="stylesheet" href="./style.css">
-    <script src="./assets/js/app.js"></script>
-    <script src="./assets/js/controllers/videoCtrl.js"></script>
-    <script src="./assets/js/controllers/homeCtrl.js"></script>
     <script src="metrics.js"></script>
     <script src="jsonpack.js"></script>
     <script src="script.js"></script>
-
-    <!-- FIREBASE -->
-    <script src="https://www.gstatic.com/firebasejs/3.5.1/firebase.js"></script>
-    <script>
-      // Initialize Firebase
-      var config = {
-        apiKey: "AIzaSyByexDWX6c-4ZwBbzQpmLPs19g3Vzkv1rg",
-        authDomain: "arte-capture.firebaseapp.com",
-        databaseURL: "https://arte-capture.firebaseio.com",
-        storageBucket: "",
-        messagingSenderId: "773300319740"
-      };
-      firebase.initializeApp(config);
-    </script>
 </body>
 
 </html>
