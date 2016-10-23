@@ -1,4 +1,5 @@
-var SEGMENT_URL; // Ugly..
+var SEGMENT_URL,
+    SEGMENT_TIME;
 
 $(document).ready(function() {
     $('#streamSelect').change(function() {
@@ -269,7 +270,8 @@ function loadStream(url) {
         });
         hls.on(Hls.Events.FRAG_CHANGED, function(event, data) {
 
-            SEGMENT_URL = data.frag.url; // <-- This is HERE!
+            SEGMENT_URL = data.frag.url;
+            SEGMENT_TIME = new Date().getTime();
 
             var event = {
                 time: performance.now() - events.t0,
@@ -935,13 +937,16 @@ var config = {
 };
 
 firebase.initializeApp(config);
-var ref = firebase.database().ref('/');
 
 $("#capture-button").on("click", function() {
     window.open(SEGMENT_URL, '_blank');
-    ref.set({ time: new Date() });
+    var ref = firebase.database().ref('/' + SEGMENT_TIME);
+    ref.transaction(function(count) {
+        return count + 1;
+    });
 });
 
+/*
 $(function() {
     $('#container').highcharts({
         chart: {
@@ -968,3 +973,4 @@ $(function() {
         }]
     });
 });
+*/
