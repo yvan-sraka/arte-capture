@@ -37,6 +37,7 @@
     </script>
 
     <script type="text/javascript">
+
         $(function() {
             $(document).ready(function() {
                 Highcharts.setOptions({
@@ -57,22 +58,22 @@
                                 var series = this.series[0];
                                 setInterval(function() {
                                     var x = (new Date()).getTime(), // current time
-                                        y = Math.random();
+                                        y = 2;
                                     series.addPoint([x, y], true, true);
-                                }, 2500);
+                                }, 5000);
                             }
                         }
                     },
                     title: {
-                        text: 'Live random data'
+                        text: 'ARTE CAPTURE DATA'
                     },
                     xAxis: {
                         type: 'datetime',
-                        tickPixelInterval: 150
+                        tickPixelInterval: 150,
                     },
                     yAxis: {
                         title: {
-                            text: 'Value'
+                            text: 'Value',
                         },
                         plotLines: [{
                             value: 0,
@@ -94,17 +95,17 @@
                         enabled: false
                     },
                     series: [{
-                        name: 'Random data',
+                        name: 'Nombre de capture',
                         data: (function() {
                             // generate an array of random data
                             var data = [],
                                 time = (new Date()).getTime(),
                                 i;
 
-                            for (i = -19; i <= 0; i += 1) {
+                            for (i = -15; i <= 0; i += 1) {
                                 data.push({
                                     x: time + i * 1000,
-                                    y: Math.random()
+                                    y: 0
                                 });
                             }
                             return data;
@@ -113,6 +114,7 @@
                 });
             });
         });
+
     </script>
 </body>
 
