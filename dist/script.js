@@ -946,9 +946,11 @@ function updatePermalink() {
 }
 
 $("#capture-button").on("click", function() {
-    window.open(SEGMENT_URL, '_blank');
-    var ref = firebase.database().ref('/' + SEGMENT_TIME);
-    ref.transaction(function(count) {
-        return count + 1;
-    });
+    if (SEGMENT_URL) {
+        window.open(SEGMENT_URL, '_blank');
+        var ref = firebase.database().ref('/' + SEGMENT_TIME);
+        ref.transaction(function(count) {
+            return count + 1;
+        });
+    }
 });
