@@ -30,11 +30,12 @@
             storageBucket: "",
             messagingSenderId: "773300319740"
         };
-        firebase.initializeApp(config); <<
+        firebase.initializeApp(config);
 
         var ref = firebase.database().ref('/');
         ref.on('value', function(snapshot) {
             var data = snapshot.val();
+            var last = 0;
             for (t in data) {
                 if (t > last) {
                     last = t;
