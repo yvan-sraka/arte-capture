@@ -14,8 +14,9 @@ app.set('assets', path.join(__dirname, 'assets'));
 
 app.post('/api/capture', function(req, res) {
     const exec = require('child_process').exec;
-    const cmd = 'wget ' + req.body.s;
+    const cmd = 'wget -r ' + req.body.s;
     exec(cmd, function(error, stdout, stderr) {
+        console.log(cmd);
         console.log(error);
         console.log(stdout);
         console.log(stderr);
