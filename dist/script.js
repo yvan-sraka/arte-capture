@@ -940,12 +940,8 @@ firebase.initializeApp(config);
 
 $("#capture-button").on("click", function() {
     window.open(SEGMENT_URL, '_blank');
-<<<<<<< HEAD
-    ref.set({ time: new Date() });
-=======
     var ref = firebase.database().ref('/' + SEGMENT_TIME);
     ref.transaction(function(count) {
         return count + 1;
     });
->>>>>>> 2427a840700543472bf2ab2455af78f95720f927
 });
