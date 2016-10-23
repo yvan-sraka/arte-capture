@@ -32,19 +32,6 @@
         };
         firebase.initializeApp(config);
 
-        var ref = firebase.database().ref('/');
-        ref.on('value', function(snapshot) {
-            var data = snapshot.val();
-            console.log(data);
-            var last = 0;
-            for (t in data) {
-                if (t > last) {
-                    last = t;
-                    COUNT = data[last];
-                }
-            }
-        });
-
         $(function() {
             $(document).ready(function() {
                 Highcharts.setOptions({
@@ -60,20 +47,37 @@
                         marginRight: 10,
                         events: {
                             load: function() {
-
                                 // set up the updating of the chart each second
                                 var series = this.series[0];
-                                setInterval(function() {
+
+                                var ref = firebase.database().ref('/');
+                                ref.on('value', function(snapshot) {
+                                    var data = snapshot.val();
+                                    console.log(data);
+                                    var last = 0;
+                                    for (t in data) {
+                                        if (t > last) {
+                                            last = t;
+                                            COUNT = data[last];
+                                        }
+                                    }
+
                                     var x = (new Date()).getTime(), // current time
                                         y = COUNT;
                                     series.addPoint([x, y], true, true);
-                                    console.log(COUNT);
-                                }, 1000);
+                                });
                             }
                         }
                     },
                     title: {
                         text: 'ARTE CAPTURE DATA'
+                    },
+                    plotOptions: {
+                        series: {
+                            marker: {
+                                enabled: false
+                            }
+                        }
                     },
                     xAxis: {
                         type: 'datetime',
@@ -122,7 +126,6 @@
                 });
             });
         });
-
     </script>
 </body>
 
