@@ -20,6 +20,8 @@
     <!-- FIREBASE -->
     <script src="https://www.gstatic.com/firebasejs/3.5.1/firebase.js"></script>
     <script>
+        var COUNT = 0;
+
         // Initialize Firebase
         var config = {
             apiKey: "AIzaSyByexDWX6c-4ZwBbzQpmLPs19g3Vzkv1rg",
@@ -32,11 +34,15 @@
 
         var ref = firebase.database().ref('/');
         ref.on('value', function(snapshot) {
-            console.log(snapshot.val());
+            var data = snapshot.val();
+            for (t in data) {
+                if (t > last) {
+                    last = t;
+                    COUNT = data[last];
+                }
+            }
         });
-    </script>
 
-    <script type="text/javascript">
         $(function() {
             $(document).ready(function() {
                 Highcharts.setOptions({
@@ -104,7 +110,7 @@
                             for (i = -19; i <= 0; i += 1) {
                                 data.push({
                                     x: time + i * 1000,
-                                    y: Math.random()
+                                    y: COUNT
                                 });
                             }
                             return data;
