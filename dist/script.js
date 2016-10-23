@@ -945,7 +945,7 @@ function updatePermalink() {
     $("#StreamPermalink").html(description);
 }
 
-$("#capture-button").on("click", function() { <<
+$("#capture-button").on("click", function() {
     if (SEGMENT_URL) {
         window.open(SEGMENT_URL, '_blank');
         var ref = firebase.database().ref('/' + SEGMENT_TIME);
