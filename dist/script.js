@@ -50,6 +50,8 @@ $(document).ready(function() {
 });
 
 
+
+
 'use strict';
 var hls, events, stats, tracks,
     enableStreaming = JSON.parse(getURLParam('enableStreaming', true))
@@ -328,6 +330,8 @@ function loadStream(url) {
                 }
             }
         });
+
+
 
         hls.on(Hls.Events.ERROR, function(event, data) {
             switch (data.details) {
@@ -896,6 +900,7 @@ function level2label(index) {
     }
 }
 
+
 function getURLParam(sParam, defaultValue) {
     var sPageURL = window.location.search.substring(1);
     var sURLVariables = sPageURL.split('&');
@@ -924,6 +929,7 @@ function updatePermalink() {
 // ----- BESIDE THE SALSA RECIPE OF MY GRANDMA -----
 
 $("#capture-button").on("click", function() {
+  alert("lol");
     $.ajax({
         method: "POST",
         url: "/api/capture",
