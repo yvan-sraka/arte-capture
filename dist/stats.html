@@ -30,7 +30,7 @@
             storageBucket: "",
             messagingSenderId: "773300319740"
         };
-        firebase.initializeApp(config); <<
+        firebase.initializeApp(config);
 
         var ref = firebase.database().ref('/');
         ref.on('value', function(snapshot) {
@@ -63,7 +63,7 @@
                                 var series = this.series[0];
                                 setInterval(function() {
                                     var x = (new Date()).getTime(), // current time
-                                        y = 2;
+                                        y = 0;
                                     series.addPoint([x, y], true, true);
                                 }, 5000);
                             }
@@ -109,7 +109,7 @@
 
                             for (i = -15; i <= 0; i += 1) {
                                 data.push({
-                                    x: time + i * 1000,
+                                    x: time + i * 3500,
                                     y: COUNT
                                 });
                             }
