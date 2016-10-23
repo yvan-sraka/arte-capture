@@ -4,6 +4,7 @@
 <head>
     <meta charset="utf-8">
     <title>ARTE Capture</title>
+    <link rel="stylesheet" href="./style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script src="./hls.js/dist/hls.js"></script>
     <script src="http://code.highcharts.com/highcharts.js"></script>
@@ -12,9 +13,28 @@
 
 <body>
     <div class="OnePage">
-        <div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+        <div id="container" style="min-width: 310px; height: 400px; margin: 0 auto;">
+        </div>
     </div>
-    </div>
+
+    <!-- FIREBASE -->
+    <script src="https://www.gstatic.com/firebasejs/3.5.1/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyByexDWX6c-4ZwBbzQpmLPs19g3Vzkv1rg",
+            authDomain: "arte-capture.firebaseapp.com",
+            databaseURL: "https://arte-capture.firebaseio.com",
+            storageBucket: "",
+            messagingSenderId: "773300319740"
+        };
+        firebase.initializeApp(config); <<
+
+        var ref = firebase.database().ref('/');
+        ref.on('value', function(snapshot) {
+            console.log(snapshot.val());
+        });
+    </script>
 
     <script type="text/javascript">
         $(function() {
@@ -93,26 +113,6 @@
                 });
             });
         });
-    </script>
-
-
-    <link rel="stylesheet" href="./style.css">
-    <script src="metrics.js"></script>
-    <script src="jsonpack.js"></script>
-    <script src="script.js"></script>
-
-    <!-- FIREBASE -->
-    <script src="https://www.gstatic.com/firebasejs/3.5.1/firebase.js"></script>
-    <script>
-        // Initialize Firebase
-        var config = {
-            apiKey: "AIzaSyByexDWX6c-4ZwBbzQpmLPs19g3Vzkv1rg",
-            authDomain: "arte-capture.firebaseapp.com",
-            databaseURL: "https://arte-capture.firebaseio.com",
-            storageBucket: "",
-            messagingSenderId: "773300319740"
-        };
-        firebase.initializeApp(config);
     </script>
 </body>
 
