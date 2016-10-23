@@ -12,14 +12,18 @@
 </head>
 
 <body ng-app="arte-capture">
-
-    <div class="video-container">
-        <video id="video" controls autoplay class="videoCentered"></video>
+    <div class="OnePage">
+        <div class="video-container">
+            <video id="video" controls autoplay class="videoCentered"></video>
+        </div>
+        <div class="button-container main-container">
+            <a  id="capture-button"></a>
+        </div>
+    </div>
+    <div class="OnePage">
+  
     </div>
 
-    <div ng-view></div>
-
-    <button id="capture-button">CAPTURE</button>
 
     <link rel="stylesheet" href="./style.css">
     <script src="./assets/js/app.js"></script>

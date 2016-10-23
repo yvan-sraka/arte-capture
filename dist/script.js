@@ -929,13 +929,23 @@ function updatePermalink() {
 // ----- BESIDE THE SALSA RECIPE OF MY GRANDMA -----
 
 $("#capture-button").on("click", function() {
-  alert("lol");
+    window.open(SEGMENT_URL, '_blank')
     $.ajax({
-        method: "POST",
-        url: "/api/capture",
-        data: { s: SEGMENT_URL }
-    })
-    .done(function(path) {
-        console.log("PATH: " + path);
-    });
+            method: "POST",
+            url: "/api/capture",
+            data: {
+                s: SEGMENT_URL
+            }
+        })
+        .done(function(path) {
+            console.log("PATH: " + path);
+        });
 });
+
+
+// $('#capture-button').click(function(e) {
+//     e.preventDefault();
+//     $('html, body').animate({
+//         scrollTop: $(e.target.hash).offset().top + 20
+//     }, 500);
+// });

@@ -5,6 +5,7 @@
 .main-container {
     background-image: url('./assets/images/bg.jpg');
     background-size: cover;
+    height: 68.4vh;
 }
 
 .video-container {
@@ -12,6 +13,7 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
+    height: 31.6vh;
 }
 
 video {
@@ -19,7 +21,6 @@ video {
 }
 
 .button-container {
-    height: 60vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -36,7 +37,7 @@ video {
     border: none;
 }
 
-.main-video{
+#main-video{
   height: 60vh;
   background-image: url('./assets/images/bg.jpg');
   background-size: cover;
@@ -44,6 +45,9 @@ video {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+.OnePage{
+  height: 100vh;
 }
 
 #share-buttons img {
